@@ -40,16 +40,16 @@ class User(AbstractUser):
 
     bio = models.TextField(default="", blank=True)
     language = models.CharField(
-        choices=LANGUAGE_CHOICES, max_length=10, null=True, blank=True
+        choices=LANGUAGE_CHOICES, max_length=10, null=True, blank=False
     )
     preference = models.CharField(
-        choices=PREFERENCE_CHOICES, max_length=10, null=True, blank=True
+        choices=PREFERENCE_CHOICES, max_length=10, null=True, blank=False
     )
 
     favorite_book_genre = models.CharField(
-        choices=GENRE_CHOICES, max_length=150, null=True, blank=True
+        choices=GENRE_CHOICES, max_length=150, null=True, blank=False
     )
 
     favorite_movie_genre = models.CharField(
-        choices=GENRE_CHOICES, max_length=150, null=True, blank=True
+        choices=GENRE_CHOICES, max_length=150, null=True, blank=False
     )
