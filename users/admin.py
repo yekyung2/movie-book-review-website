@@ -35,3 +35,6 @@ class CustomUserAdmin(UserAdmin):
         "favorite_book_genre",
         "favorite_movie_genre",
     )
+
+
+fis
