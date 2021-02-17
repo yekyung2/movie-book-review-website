@@ -8,26 +8,6 @@ class User(AbstractUser):
 
     """ Custom User Models"""
 
-    # PREFERENCE_BOOKS = "books"
-    # PREFERENCE_MOVIES = "movies"
-
-    # PREFERENCE_CHOICES = (
-    #     (PREFERENCE_BOOKS, "Books"),
-    #     (PREFERENCE_MOVIES, "Movies"),
-    # )
-
-    # LANGUAGE_ENGLISH = "en"
-    # LANGUAGE_KOREAN = "ko"
-
-    # LANGUAGE_CHOICES = (
-    #     (LANGUAGE_ENGLISH, "English"),
-    #     (LANGUAGE_KOREAN, "Korean"),
-    # )
-
-    # bio = models.TextField(default="")
-    # preference = models.CharField(choices=PREFERENCE_CHOICES, max_length=150)
-    # language = models.CharField(choices=LANGUAGE_CHOICES, max_length=150)
-
     LANGUAGE_ENGLISH = "eng"
     LANGUAGE_KOREAN = "kr"
 
@@ -58,10 +38,18 @@ class User(AbstractUser):
         (GENRE_HORROR, "Horror"),
     )
 
+    bio = models.TextField(default="", blank=True)
     language = models.CharField(
         choices=LANGUAGE_CHOICES, max_length=10, null=True, blank=True
     )
     preference = models.CharField(
         choices=PREFERENCE_CHOICES, max_length=10, null=True, blank=True
     )
-    bio = models.TextField(default="", blank=True)
+
+    favorite_book_genre = models.CharField(
+        choices=GENRE_CHOICES, max_length=150, null=True, blank=True
+    )
+
+    favorite_movie_genre = models.CharField(
+        choices=GENRE_CHOICES, max_length=150, null=True, blank=True
+    )
